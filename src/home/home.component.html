@@ -1,0 +1,90 @@
+<div class="filter-container">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="filter-block">
+          <h5>Platform:</h5>
+          <hr>
+          <div>
+            <div class="filter-option">
+              <input type="radio" id="all" name="platform" value=""  formControlName="platform">
+              <label for="all">All</label>
+            </div>
+            <div class="filter-option">
+              <input type="radio" id="pc" name="platform" value="pc"  formControlName="platform">
+              <label for="pc">PC</label>
+            </div>
+            <div class="filter-option">
+              <input type="radio" id="browser" name="platform" value="browser" formControlName="platform">
+              <label for="browser">Browser</label>
+            </div>
+          </div>
+        </div>
+        <div class="filter-block">
+            <h5>Genres</h5>
+            <hr>
+            <div class="scroll">
+              <div class="filter-option" formGroupName="genre" *ngFor="let controlName of genreControlNames"> 
+                <input type="checkbox" id="{{controlName}}" name="tags" value="{{controlName}}" formControlName="{{controlName}}">
+                <label for="{{controlName}}">{{controlName.toUpperCase()}}</label>
+              </div>
+            </div>
+          </div>
+        <div class="filter-block">
+          <h5>Graphics</h5>
+          <hr>
+          <div class="filter-option" formGroupName="graphics" *ngFor="let controlName of graphicsControlNames"> 
+            <input type="checkbox" id="{{controlName}}" name="graphics" value="{{controlName}}" formControlName="{{controlName}}">
+            <label for="{{controlName}}">{{controlName.toUpperCase()}} Graphics</label>
+          </div>
+        </div>
+        <div class="filter-block">
+          <h5>Combat</h5>
+          <hr>
+          <div class="filter-option" formGroupName="combat" *ngFor="let controlName of combatControlNames"> 
+            <input type="checkbox" id="{{controlName}}" name="combat" value="{{controlName}}" formControlName="{{controlName}}">
+            <label for="{{controlName}}">{{controlName.toUpperCase()}}</label>
+          </div>
+        </div>
+        <div class="filter-block">
+          <h5>Gameplay</h5>
+          <hr>
+          <div class="filter-option" formGroupName="gameplay" *ngFor="let controlName of gameplayControlNames"> 
+            <input type="checkbox" id="{{controlName}}" name="gameplay" value="{{controlName}}" formControlName="{{controlName}}">
+            <label for="{{controlName}}">{{controlName.toUpperCase()}}</label>
+          </div>
+        </div>
+        <div class="filter-block">
+          <h5>Theme</h5>
+          <hr>
+          <div class="filter-option" formGroupName="theme" *ngFor="let controlName of themeControlNames"> 
+            <input type="checkbox" id="{{controlName}}" name="theme" value="{{controlName}}" formControlName="{{controlName}}">
+            <label for="{{controlName}}">{{controlName.toUpperCase()}}</label>
+          </div>
+        </div>
+        <div class="filter-block">
+          <h5>Tags:</h5>
+          <hr>
+          <div class="scroll">
+            <div class="filter-option" formGroupName="tags" *ngFor="let controlName of tagsControlNames"> 
+              <input type="checkbox" id="{{controlName}}" name="tags" value="{{controlName}}" formControlName="{{controlName}}">
+              <label for="{{controlName}}">{{controlName.toUpperCase()}}</label>
+            </div>
+         </div>
+          <button type="submit">Search</button>
+        </div>
+        
+      </form>
+</div>
+
+<div class="card-container" *ngIf="freegames.length > 0">
+    <div class="card" *ngFor="let game of freegames">
+        <a href="{{game.game_url}}"><img src="{{game.thumbnail}}" alt="Thumbnail" class="card-img" onerror="this.src='./assets/images/no_image.png'"></a>
+        <div class="card-body">
+        <h2 class="card-title">{{ game.title }}</h2>
+        <p class="card-text">{{ game.short_description }}</p>
+        <button class="card-button">More info</button>
+      </div>
+  </div>
+</div>
+<h1 class="card-container" *ngIf="freegames.length === 0">
+  <p>There are no free games available for this filter.<br>Please use other filter options!</p>
+</h1>
