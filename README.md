@@ -1,4 +1,4 @@
-# FAM-backend
+# FAM-frontend
 
 This is the frontend side of my interesting PET project.  
 For the other parts, please use the following links:
