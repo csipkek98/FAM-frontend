@@ -3,6 +3,9 @@
 This is the frontend side of my interesting PET project.  
 For the other parts, please use the following links:
 
+- [Backend](https://github.com/csipkek98/FAM-backend)
+- [Scraper](https://github.com/csipkek98/FAM-scraper)
+
 ## About the project
 The project is meant to be a "home page" for my friend group. It contains a News page, where we can find news related to gaming and a "Free game" page, where I use an API to get data from games that are free to play.
 
@@ -24,7 +27,7 @@ Furthermore, I used **SASS** for CSS, **HTML** as template and in Angular of cou
 
 ## News page
 
-This page is used to show us recent gaming related news from two different sources (IGN and Gamestar). I scrape them down time to time to show this data and I get it from the backend part of the application (but more about this on the scaper's github page)
+This page is used to show us recent gaming related news from two different sources (IGN and Gamestar). I scrape them down time to time to show this data and I get it from the backend part of the application (but more about this on the [scaper's github page](https://github.com/csipkek98/FAM-scraper))
 
 ![image](https://user-images.githubusercontent.com/90270578/236460351-37dd26fb-9b5a-4117-8fd2-9c13c21a06bf.png)  
 
